@@ -1,0 +1,10 @@
+# Instructions for Lab 5: Model Pruning
+
+This lab prunes the t5-small model to remove redundant weights.
+
+Steps:
+1. Install dependencies: `pip install -r requirements.txt` if locally
+2. Review `starter_code.py`:
+   - The script loads the model, prints the total parameter count, and prunes each Linear layer (20% via L1 unstructured pruning).
+3. Execute with: `python starter_code.py`
+4. Verify output; note that many weights have been zeroed.

@@ -1,0 +1,10 @@
+# Instructions for Lab 3: Summarisation with DialogSum using LoRA
+
+This lab fine-tunes the summarisation model on the DialogSum dataset using LoRA.
+
+Steps:
+1. Install dependencies: `pip install -r requirements.txt` if locally
+2. Review `starter_code.py` to see how dialogues and summaries are tokenized and used for training.
+3. (Optional) Run `download_models.py` to cache models.
+4. Execute with: `python starter_code.py`
+5. Note: LoRA updates only low-rank matrices, making it more efficient than full fine-tuning.

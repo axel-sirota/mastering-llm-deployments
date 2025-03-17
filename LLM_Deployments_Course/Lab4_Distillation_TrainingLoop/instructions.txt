@@ -1,0 +1,14 @@
+# Instructions for Lab 4: Efficient Distillation using a Custom Training Loop
+
+This lab distills a teacher summarisation model into a smaller student model using a custom training loop.
+
+Steps:
+1. Install dependencies: `pip install -r requirements.txt` if locally
+2. Review `starter_code.py`:
+   - The teacher model (google/flan-t5-xl) is loaded in evaluation mode.
+   - The student model (t5-small) is loaded for training.
+   - A small subset of the DialogSum (or dummy) dataset is tokenized.
+   - KL divergence is computed between teacher and student outputs.
+3. (Optional) Run `download_models.py` to cache models.
+4. Execute with: `python starter_code.py`
+5. Monitor the loss output to track distillation progress.

@@ -1,0 +1,9 @@
+# Instructions for Lab 7: Performance Benchmarking
+
+This lab benchmarks your summarisation model.
+
+Steps:
+1. Install dependencies: `pip install -r requirements.txt` if locally
+2. Review `benchmark.py` for how latency and dummy BLEU/ROUGE scores are computed.
+3. Execute with: `python benchmark.py`
+4. Analyze the output metrics.

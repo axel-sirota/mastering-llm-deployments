@@ -1,0 +1,10 @@
+# Instructions for Lab 6: Model Quantization
+
+This lab applies one of three quantization approaches.
+
+Steps:
+1. Install dependencies: `pip install -r requirements.txt` if locally
+2. Review `starter_code.py` to see how the script selects a quantization mode based on the command-line argument.
+3. Run with a mode, for example: `python starter_code.py int8`
+4. The quantized model is saved in a folder named according to the mode.
+5. Note: Training-Aware Quantization is only simulated.

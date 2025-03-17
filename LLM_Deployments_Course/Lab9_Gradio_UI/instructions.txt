@@ -1,0 +1,9 @@
+# Instructions for Lab 9: Gradio UI for Summarisation Chatbot
+
+Steps:
+1. Install dependencies: `pip install -r requirements.txt` if locally
+2. Review `app.py` for the summarisation function and Gradio interface.
+3. Execute with: `python app.py` and open the provided URL in your browser.
+4. (Optional) Build and run the Docker container:
+   - Build: `docker build -t gradio-summarisation .`
+   - Run: `docker run -p 7860:7860 gradio-summarisation`

@@ -1,0 +1,13 @@
+# Instructions for Lab 2: Sentiment Analysis on IMDb with LoRA
+
+This lab demonstrates fine-tuning "google/flan-t5-xl" for sentiment analysis using the IMDb dataset and LoRA.
+
+Steps:
+1. Install dependencies: `pip install -r requirements.txt` if locally
+2. Review `starter_code.py`:
+   - The IMDb dataset is loaded and numeric labels are mapped to "positive"/"negative".
+   - The input is prefixed with "Classify sentiment: ".
+   - A LoRA adapter is applied to the model.
+3. (Optional) Run `download_models.py` to cache models.
+4. Execute with: `python starter_code.py`
+5. Note: LoRA updates only low-rank matrices for efficiency.
