@@ -1,0 +1,7 @@
+# Instructions for Lab 11: Deploying to Hugging Face Spaces
+
+Steps:
+1. Create a new Space on Hugging Face.
+2. Upload the files: app.py, requirements.txt, and Dockerfile.
+3. The Space will build and launch your Gradio app automatically.
+4. Test the Space by entering text and verifying the summarisation.

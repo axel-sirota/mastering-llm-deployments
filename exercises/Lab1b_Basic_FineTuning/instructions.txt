@@ -1,0 +1,8 @@
+# Instructions for Lab 1b: Basic Fine-Tuning for Sentiment Analysis with DistilBERT (Exercise)
+
+In this exercise, parts of the training code have been removed.
+Your task is to complete the implementation so that the Trainer actually trains the model.
+Make sure to:
+- Call the trainer's train() method.
+- Optionally adjust the TrainingArguments.
+Follow the comments for guidance.

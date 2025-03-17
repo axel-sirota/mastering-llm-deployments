@@ -1,0 +1,9 @@
+# Instructions for Lab 3: Summarisation with DialogSum using LoRA (Exercise)
+
+In this exercise, parts of the training code have been removed.
+Your task is to complete the training call (and optionally add evaluation metrics).
+Steps:
+1. Install dependencies: `pip install -r requirements.txt`
+2. (Optional) Run root-level download_datasets.py to download DialogSum.
+3. Complete the placeholder in starter_code.py.
+4. Run the script and verify training progress.

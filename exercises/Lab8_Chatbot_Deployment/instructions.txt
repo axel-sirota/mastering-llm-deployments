@@ -1,0 +1,7 @@
+# Instructions for Lab 8: Chatbot Deployment
+
+This lab converts your summarisation model into a simple interactive chatbot.
+Steps:
+1. Install dependencies: `pip install -r requirements.txt`
+2. Execute with: `python chatbot.py`
+3. Interact with the chatbot; type 'exit' to quit.

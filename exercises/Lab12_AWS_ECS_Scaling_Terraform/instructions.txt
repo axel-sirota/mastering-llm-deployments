@@ -1,0 +1,10 @@
+# Instructions for Lab 12: AWS ECS Scaling with Terraform
+
+This lab extends your ECS deployment to include scaling with a load balancer.
+Steps:
+1. Ensure AWS CLI and Terraform are installed.
+2. Update variables.tf with your AWS details.
+3. Initialize Terraform with: `terraform init`
+4. Deploy with: `terraform apply`
+5. Note the ALB DNS name from outputs.
+6. Test the service by accessing the ALB endpoint.

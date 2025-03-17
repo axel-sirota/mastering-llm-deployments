@@ -1,0 +1,11 @@
+# Instructions for Lab 10: Deploying to AWS ECS with Terraform
+
+Steps:
+1. Ensure AWS CLI and Terraform are installed.
+2. Update variables.tf with your AWS details: ECS execution role ARN, Docker image URI, subnets, and security groups.
+3. Edit push_image.sh to replace <YOUR_ECR_REPO_URI> with your actual ECR repository URI.
+4. Build and push your Docker image using: `bash push_image.sh`
+5. Initialize Terraform with: `terraform init`
+6. Deploy with: `terraform apply`
+7. Verify deployment using the outputs.
+8. Test the service by accessing its public endpoint.

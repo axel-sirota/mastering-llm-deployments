@@ -1,0 +1,8 @@
+# Instructions for Lab 2: Sentiment Analysis with DistilBERT
+
+This lab fine-tunes a sentiment analysis model using a local copy of DistilBERT.
+Steps:
+1. Install dependencies: `pip install -r requirements.txt`
+2. (Optional) Run the root-level download_datasets.py to download IMDb.
+3. Execute with: `python starter_code.py`
+4. Check the console output for training progress.

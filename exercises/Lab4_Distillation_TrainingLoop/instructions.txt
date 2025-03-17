@@ -1,0 +1,9 @@
+# Instructions for Lab 4: Efficient Distillation using a Custom Training Loop (Exercise)
+
+In this exercise, the training loop has been removed.
+Your task is to implement the training loop (using KL divergence loss) to distill the teacher model into the student model.
+Steps:
+1. Install dependencies: `pip install -r requirements.txt`
+2. (Optional) Run the root-level download_models.py and download_datasets.py.
+3. Complete the placeholder in starter_code.py.
+4. Run the script and monitor the loss output.

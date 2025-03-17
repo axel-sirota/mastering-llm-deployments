@@ -1,0 +1,10 @@
+# Instructions for Lab 1a: Intro to Transfer Learning with Hugging Face
+
+This lab demonstrates loading a pre-trained model and tokenizer from local storage.
+- Models are loaded using local_files_only=True.
+- The tokenizer is loaded with use_fast=False.
+Steps:
+1. Install dependencies: `pip install -r requirements.txt`
+2. (Optional) Run the root-level download_models.py to download models.
+3. Execute with: `python starter_code.py`
+4. Check the console output for successful loading.

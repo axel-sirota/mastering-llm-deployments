@@ -1,0 +1,7 @@
+# Instructions for Lab 7: Performance Benchmarking
+
+This lab benchmarks the summarisation model (t5-small) for latency and placeholder evaluation metrics.
+Steps:
+1. Install dependencies: `pip install -r requirements.txt`
+2. Execute with: `python benchmark.py`
+3. Review the output for average latency and metrics.

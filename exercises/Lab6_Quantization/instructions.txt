@@ -1,0 +1,7 @@
+# Instructions for Lab 6: Model Quantization
+
+This lab applies one of three quantization techniques to t5-small.
+Usage:
+1. Install dependencies: `pip install -r requirements.txt`
+2. Run with: `python starter_code.py int8` (or "taq" or "bfloat16")
+3. The quantized model is saved in a folder named by the mode.
