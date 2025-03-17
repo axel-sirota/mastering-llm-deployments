@@ -172,3 +172,9 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+local_models
+local_datasets
+files.py
+create_struture.py
+*.zip
+.DS_Store
