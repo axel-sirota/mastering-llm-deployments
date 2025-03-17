@@ -1,0 +1,8 @@
+torch --index-url https://download.pytorch.org/whl/cu124
+transformers>=4.49
+torchvision
+torchtext
+huggingface_hub
+sentencepiece
+sentence-transformers
+datasets
