@@ -1,0 +1,10 @@
+# Instructions for Lab 1b: Basic Fine-Tuning with Hugging Face
+
+This lab demonstrates a basic fine-tuning workflow using Hugging Face's Trainer API with a dummy dataset.
+
+Steps:
+1. Install dependencies: `pip install -r requirements.txt` if locally
+2. Review `starter_code.py` to see how the "google/flan-t5-xl" model is loaded, a dummy dataset is created, tokenized, and fine-tuned.
+3. (Optional) Run `download_models.py` to cache models.
+4. Execute with: `python starter_code.py`
+5. Note: Traditional fine-tuning updates all model weights; later labs will cover parameter-efficient methods.

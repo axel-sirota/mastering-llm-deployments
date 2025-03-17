@@ -1,0 +1,11 @@
+# Instructions for Lab 1a: Intro to Transfer Learning with Hugging Face
+
+This lab introduces you to the basic workflow of loading a pre-trained model and tokenizer using the Hugging Face Transformers library.
+
+Steps:
+1. Install dependencies by running: `pip install -r requirements.txt` if locally
+2. Review `starter_code.py` to see how the tokenizer and model ("google/flan-t5-xl") are loaded.
+3. (Optional) Run `download_models.py` to cache models locally.
+4. Execute the script with: `python starter_code.py`
+5. Observe the output confirming that the tokenizer and model are loaded successfully.
+6. Play with the structure of the model in AutoModel and the TaskAutoModel
