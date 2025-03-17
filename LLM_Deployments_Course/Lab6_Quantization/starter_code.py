@@ -31,8 +31,8 @@ def main():
         sys.exit(1)
     mode = sys.argv[1]
     model_name = "t5-small"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     print(f"Applying quantization mode: {mode}")
     quantized_model = quantize_model(model, mode)
     output_dir = f"./quantized_model_{mode}"

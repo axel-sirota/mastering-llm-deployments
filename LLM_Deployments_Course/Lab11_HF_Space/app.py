@@ -8,8 +8,8 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 def load_model():
     model_name = "t5-small"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     return tokenizer, model
 
 tokenizer, model = load_model()

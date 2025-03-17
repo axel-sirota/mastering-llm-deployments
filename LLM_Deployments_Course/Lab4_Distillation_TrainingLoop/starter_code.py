@@ -20,12 +20,12 @@ def tokenize_function(example, tokenizer, max_input_length=256, max_target_lengt
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     teacher_model_name = "local_models/flan-t5-xl"
-    teacher_tokenizer = AutoTokenizer.from_pretrained(teacher_model_name)
-    teacher_model = AutoModelForSeq2SeqLM.from_pretrained(teacher_model_name).to(device)
+    teacher_tokenizer = AutoTokenizer.from_pretrained(teacher_model_name, local_files_only=True)
+    teacher_model = AutoModelForSeq2SeqLM.from_pretrained(teacher_model_name, local_files_only=True).to(device)
     teacher_model.eval()
     student_model_name = "t5-small"
-    student_tokenizer = AutoTokenizer.from_pretrained(student_model_name)
-    student_model = AutoModelForSeq2SeqLM.from_pretrained(student_model_name).to(device)
+    student_tokenizer = AutoTokenizer.from_pretrained(student_model_name, local_files_only=True)
+    student_model = AutoModelForSeq2SeqLM.from_pretrained(student_model_name, local_files_only=True).to(device)
     student_model.train()
     try:
         dataset = load_from_disk("local_datasets/dialogsum")

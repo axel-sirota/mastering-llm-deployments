@@ -20,8 +20,8 @@ def tokenize_function(example, tokenizer):
 
 def main():
     model_name = "local_models/flan-t5-xl"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     lora_config = LoraConfig(
         r=8,
         lora_alpha=32,

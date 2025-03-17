@@ -17,8 +17,8 @@ def generate_summary(model, tokenizer, text):
 
 def main():
     model_name = "t5-small"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     test_text = ("Speaker1: Hello, how are you? Speaker2: I'm doing well, thank you. "
                  "Could you please summarize our conversation?")
     num_runs = 10

@@ -10,8 +10,8 @@ import torch.nn.utils.prune as prune
 
 def main():
     model_name = "t5-small"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     print("Before pruning:")
     total_params = sum(p.numel() for p in model.parameters())
     print(f"Total parameters: {total_params}")
