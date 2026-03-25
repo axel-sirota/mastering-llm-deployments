@@ -13,21 +13,20 @@ from peft import get_peft_model, LoraConfig
 
 def tokenize_function(example, tokenizer):
     model_inputs = tokenizer(example["dialogue"], truncation=True, padding="max_length", max_length=256)
-    with tokenizer.as_target_tokenizer():
-        labels = tokenizer(example["summary"], truncation=True, padding="max_length", max_length=128)
-    # [EXERCISE] Add any parameters you think are necessary.
+    labels = tokenizer(text_target=example["summary"], truncation=True, padding="max_length", max_length=128)
+    model_inputs["labels"] = labels["input_ids"]
     return model_inputs
 
 def main():
     model_name = "local_models/flan-t5-xl"
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, local_files_only=True)
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     
     lora_config = LoraConfig(
-        # [EXERCISE] Add any parameters you think are necessary.
+        r=None,  # YOUR CODE: rank of the low-rank decomposition (integer, e.g. 16)
         lora_alpha=32,
         target_modules=["q", "v"],
-        # [EXERCISE] Add any parameters you think are necessary.
+        lora_dropout=None,  # YOUR CODE: dropout probability for LoRA layers (float between 0 and 1)
         task_type="SEQ_2_SEQ_LM"
     )
     model = get_peft_model(model, lora_config)
@@ -35,7 +34,7 @@ def main():
     
     try:
         dataset = load_from_disk("local_datasets/dialogsum")
-        train_dataset = None # [EXERCISE] Add any parameters you think are necessary.
+        train_dataset = dataset["train"].shuffle(seed=42).select(range(500))
     except Exception as e:
         print(f"Failed to load DialogSum dataset from disk: {e}")
         data = {
@@ -68,11 +67,10 @@ def main():
         model=model,
         args=training_args,
         train_dataset=tokenized_dataset,
-        # [EXERCISE] Think about adding evaluation metrics here.
     )
     
     print("Starting summarisation fine-tuning on DialogSum...")
-    None  # please fill here with code to call trainer.train()
+    None  # YOUR CODE: call trainer.train() to start fine-tuning
     print("Fine-tuning complete!")
 
 if __name__ == "__main__":

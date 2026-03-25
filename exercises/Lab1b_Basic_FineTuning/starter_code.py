@@ -10,15 +10,12 @@ from transformers import AutoTokenizer, AutoModelForSequenceClassification, Trai
 from datasets import Dataset
 
 def tokenize_function(example, tokenizer):
-    return tokenizer(example["text"], 
-                     truncation=True, 
-                     # [EXERCISE] Add any parameters you think are necessary.
-                     )
+    return tokenizer(example["text"], truncation=True)
 
 def main():
     model_name = "local_models/distilbert-base-uncased-finetuned-sst-2-english"
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, local_files_only=True)
-    model = None  # [EXERCISE] Add any parameters you think are necessary.
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = None  # YOUR CODE: load the sequence classification model from model_name with local_files_only=True
 
     
     device = "cuda" if torch.cuda.is_available() else "cpu"
@@ -43,19 +40,17 @@ def main():
         save_steps=10,
         learning_rate=2e-5,
         weight_decay=0.01,
-        report_to="none"  # No API reporting
-        # [EXERCISE] Add any additional training parameters you think are necessary.
+        report_to="none"
     )
     
     trainer = Trainer(
         model=model,
         args=training_args,
         train_dataset=tokenized_dataset,
-        # [EXERCISE] Optionally, add evaluation metrics or a compute_metrics function.
     )
     
     print("Starting fine-tuning for sentiment analysis...")
-    None  # please fill here with code to call trainer.train()
+    None  # YOUR CODE: call trainer.train() to start fine-tuning
     print("Fine-tuning complete!")
 
 if __name__ == "__main__":

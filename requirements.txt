@@ -1,8 +1,10 @@
-torch --index-url https://download.pytorch.org/whl/cu124
-transformers>=4.49
-torchvision
-torchtext
+torch==2.2.2
+transformers>=4.48,<4.49
+torchvision==0.17.2
+torchtext==0.17.2
+torchaudio==2.2.2
 huggingface_hub
 sentencepiece
 sentence-transformers
-datasets
+datasets>=3.0,<4
+numpy<2

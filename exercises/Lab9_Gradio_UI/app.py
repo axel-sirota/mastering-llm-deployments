@@ -8,7 +8,7 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 def load_model():
     model_name = "t5-small"
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False)
+    tokenizer = AutoTokenizer.from_pretrained(model_name)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
     return tokenizer, model
 
@@ -16,11 +16,11 @@ tokenizer, model = load_model()
 
 def summarize_text(text):
     inputs = tokenizer(text, return_tensors="pt", truncation=True, padding="max_length", max_length=256)
-    outputs = # [EXERCISE] Add any parameters you think are necessary.
-    return # [EXERCISE] Add any parameters you think are necessary.
+    outputs = None  # YOUR CODE: run model.generate() with the tokenized inputs
+    return None  # YOUR CODE: decode the first output sequence, skipping special tokens
 
 iface = gr.Interface(fn=summarize_text, inputs="text", outputs="text", title="Summarisation Chatbot",
                      description="Enter a conversation or text to get a summarised version.")
 
 if __name__ == "__main__":
-    iface.launch()
+    iface.launch(server_name="0.0.0.0")

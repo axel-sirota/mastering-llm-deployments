@@ -7,7 +7,7 @@ User input is processed to generate a summary.
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 def load_model():
-    model_name = "t5-small"
+    model_name = "local_models/t5-small"
     tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     return tokenizer, model

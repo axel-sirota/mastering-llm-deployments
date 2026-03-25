@@ -10,14 +10,14 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 def generate_summary(model, tokenizer, text):
     inputs = tokenizer(text, return_tensors="pt", truncation=True, padding="max_length", max_length=256)
     with torch.no_grad():
-        outputs = model.generate(**inputs)
-    summary = tokenizer.decode(outputs[0], skip_special_tokens=True)
+        outputs = None  # YOUR CODE: run model.generate() with the tokenized inputs
+    summary = None  # YOUR CODE: decode the first output sequence, skipping special tokens
     return summary
 
 def main():
-    model_name = "t5-small"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    model_name = "local_models/t5-small"
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     
     test_text = ("Speaker1: Hello, how are you? Speaker2: I'm doing well, thank you. "
                  "Could you please summarize our conversation?")

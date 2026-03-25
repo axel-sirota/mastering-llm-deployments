@@ -14,13 +14,13 @@ def tokenize_function(example, tokenizer):
 
 def main():
     model_name = "local_models/distilbert-base-uncased-finetuned-sst-2-english"
-    tokenizer = AutoTokenizer.from_pretrained(model_name, use_fast=False, local_files_only=True)
-    model = None # [EXERCISE] Add any parameters you think are necessary.
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = None  # YOUR CODE: load the sequence classification model from model_name with local_files_only=True
     device = "cuda" if torch.cuda.is_available() else "cpu"
     model.to(device)
     
     try:
-        dataset = None # [EXERCISE] Add any parameters you think are necessary.
+        dataset = None  # YOUR CODE: load the IMDb dataset from "local_datasets/imdb" using load_from_disk
         train_dataset = dataset["train"].shuffle(seed=42).select(range(1000))
     except Exception as e:
         print(f"Failed to load IMDb dataset from disk: {e}")
@@ -39,12 +39,12 @@ def main():
         output_dir="./results",
         num_train_epochs=1,
         per_device_train_batch_size=2
-        # [EXERCISE] Add any parameters you think are necessary.
     )
     
     trainer = Trainer(
         model=model,
-        # [EXERCISE] Add any parameters you think are necessary.
+        args=training_args,
+        train_dataset=None,  # YOUR CODE: pass the tokenized dataset
     )
     
     print("Starting fine-tuning for sentiment analysis...")

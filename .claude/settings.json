@@ -1,0 +1,1063 @@
+{
+  "permissions": {
+    "allow": [
+      "Read",
+      "Glob",
+      "Grep",
+      "WebSearch",
+      "WebFetch",
+      "Bash(aws logs:*)",
+      "Bash(aws dynamodb:*)",
+      "Bash(aws s3:*)",
+      "Bash(aws s3api:*)",
+      "Bash(aws ecs:*)",
+      "Bash(aws ec2:*)",
+      "Bash(aws elbv2:*)",
+      "Bash(aws elasticloadbalancing:*)",
+      "Bash(aws servicediscovery:*)",
+      "Bash(aws ecr:*)",
+      "Bash(aws cloudwatch:*)",
+      "Bash(aws sts:*)",
+      "Bash(aws rds:*)",
+      "Bash(aws secretsmanager:*)",
+      "Bash(aws ssm:*)",
+      "Read(//Users/axelsirota/repos/**)",
+      "Bash(xargs:*)",
+      "Bash(ls:*)",
+      "Bash(curl:*)",
+      "Bash(python:*)"
+    ],
+    "deny": [
+      "Bash(aws s3 rm:*)",
+      "Bash(aws s3 rb:*)",
+      "Bash(aws s3api delete:*)",
+      "Bash(aws logs delete:*)",
+      "Bash(aws dynamodb delete:*)",
+      "Bash(aws ecs delete:*)",
+      "Bash(aws ec2 terminate:*)",
+      "Bash(aws ec2 delete:*)",
+      "Bash(aws elbv2 delete:*)",
+      "Bash(aws elasticloadbalancing delete:*)",
+      "Bash(aws ecr delete:*)",
+      "Bash(aws rds delete:*)",
+      "Bash(aws secretsmanager delete:*)",
+      "Bash(aws ssm delete:*)"
+    ],
+    "additionalDirectories": [
+      "/Users/axelsirota/repos/bread-financial-academy/zips"
+    ]
+  },
+  "allowedCommands": [
+    {
+      "command": "terraform",
+      "args": [
+        "init"
+      ],
+      "description": "Initialize Terraform working directory"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "plan"
+      ],
+      "description": "Create Terraform execution plan"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "apply"
+      ],
+      "description": "Apply Terraform changes"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "import"
+      ],
+      "description": "Import existing infrastructure"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "state"
+      ],
+      "description": "Manage Terraform state"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "output"
+      ],
+      "description": "Read Terraform outputs"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "show"
+      ],
+      "description": "Show Terraform state or plan"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "validate"
+      ],
+      "description": "Validate Terraform configuration"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "fmt"
+      ],
+      "description": "Format Terraform configuration"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "workspace"
+      ],
+      "description": "Manage Terraform workspaces"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "refresh"
+      ],
+      "description": "Refresh Terraform state"
+    },
+    {
+      "command": "terraform",
+      "args": [
+        "graph"
+      ],
+      "description": "Generate Terraform dependency graph"
+    },
+    {
+      "command": "git",
+      "args": [
+        "status"
+      ],
+      "description": "Show git working tree status"
+    },
+    {
+      "command": "git",
+      "args": [
+        "add"
+      ],
+      "description": "Add files to git staging area"
+    },
+    {
+      "command": "git",
+      "args": [
+        "commit"
+      ],
+      "description": "Commit changes to git"
+    },
+    {
+      "command": "git",
+      "args": [
+        "pull"
+      ],
+      "description": "Pull changes from remote"
+    },
+    {
+      "command": "git",
+      "args": [
+        "fetch"
+      ],
+      "description": "Fetch from remote repository"
+    },
+    {
+      "command": "git",
+      "args": [
+        "checkout"
+      ],
+      "description": "Switch branches or restore files"
+    },
+    {
+      "command": "git",
+      "args": [
+        "branch"
+      ],
+      "description": "List, create, or delete branches"
+    },
+    {
+      "command": "git",
+      "args": [
+        "merge"
+      ],
+      "description": "Merge branches"
+    },
+    {
+      "command": "git",
+      "args": [
+        "rebase"
+      ],
+      "description": "Rebase commits"
+    },
+    {
+      "command": "git",
+      "args": [
+        "log"
+      ],
+      "description": "Show commit logs"
+    },
+    {
+      "command": "git",
+      "args": [
+        "diff"
+      ],
+      "description": "Show differences between commits"
+    },
+    {
+      "command": "git",
+      "args": [
+        "stash"
+      ],
+      "description": "Stash changes temporarily"
+    },
+    {
+      "command": "git",
+      "args": [
+        "tag"
+      ],
+      "description": "Create, list, or delete tags"
+    },
+    {
+      "command": "git",
+      "args": [
+        "reset"
+      ],
+      "description": "Reset current HEAD to specified state"
+    },
+    {
+      "command": "git",
+      "args": [
+        "rm"
+      ],
+      "description": "Remove files from git"
+    },
+    {
+      "command": "git",
+      "args": [
+        "mv"
+      ],
+      "description": "Move or rename files in git"
+    },
+    {
+      "command": "git",
+      "args": [
+        "remote"
+      ],
+      "description": "Manage remote repositories"
+    },
+    {
+      "command": "git",
+      "args": [
+        "clean"
+      ],
+      "description": "Remove untracked files"
+    },
+    {
+      "command": "git",
+      "args": [
+        "show"
+      ],
+      "description": "Show various types of objects"
+    },
+    {
+      "command": "git",
+      "args": [
+        "blame"
+      ],
+      "description": "Show what revision and author last modified each line"
+    },
+    {
+      "command": "git",
+      "args": [
+        "describe"
+      ],
+      "description": "Describe a commit using the most recent tag"
+    },
+    {
+      "command": "git",
+      "args": [
+        "grep"
+      ],
+      "description": "Search through tracked files"
+    },
+    {
+      "command": "git",
+      "args": [
+        "reflog"
+      ],
+      "description": "Show reference logs"
+    },
+    {
+      "command": "git",
+      "args": [
+        "shortlog"
+      ],
+      "description": "Summarize git log output"
+    },
+    {
+      "command": "git",
+      "args": [
+        "bisect"
+      ],
+      "description": "Use binary search to find the commit that introduced a bug"
+    },
+    {
+      "command": "git",
+      "args": [
+        "config"
+      ],
+      "description": "Get and set repository or global options"
+    },
+    {
+      "command": "git",
+      "args": [
+        "init"
+      ],
+      "description": "Initialize a new git repository"
+    },
+    {
+      "command": "git",
+      "args": [
+        "clone"
+      ],
+      "description": "Clone a repository"
+    },
+    {
+      "command": "git",
+      "args": [
+        "submodule"
+      ],
+      "description": "Manage git submodules"
+    },
+    {
+      "command": "git",
+      "args": [
+        "worktree"
+      ],
+      "description": "Manage multiple working trees"
+    },
+    {
+      "command": "git",
+      "args": [
+        "archive"
+      ],
+      "description": "Create an archive of files from a named tree"
+    },
+    {
+      "command": "git",
+      "args": [
+        "apply"
+      ],
+      "description": "Apply a patch to files"
+    },
+    {
+      "command": "git",
+      "args": [
+        "format-patch"
+      ],
+      "description": "Prepare patches for email submission"
+    },
+    {
+      "command": "git",
+      "args": [
+        "am"
+      ],
+      "description": "Apply patches from a mailbox"
+    },
+    {
+      "command": "git",
+      "args": [
+        "revert"
+      ],
+      "description": "Revert some existing commits"
+    },
+    {
+      "command": "python3",
+      "args": [
+        "*"
+      ],
+      "description": "Execute Python 3 scripts"
+    },
+    {
+      "command": "python",
+      "args": [
+        "*"
+      ],
+      "description": "Execute Python scripts"
+    },
+    {
+      "command": ".venv/bin/python3",
+      "args": [
+        "*"
+      ],
+      "description": "Execute Python 3 from virtual environment"
+    },
+    {
+      "command": ".venv/bin/python",
+      "args": [
+        "*"
+      ],
+      "description": "Execute Python from virtual environment"
+    },
+    {
+      "command": ".venv/bin/pip",
+      "args": [
+        "*"
+      ],
+      "description": "Pip operations in virtual environment"
+    },
+    {
+      "command": ".venv/bin/python3",
+      "args": [
+        "-m",
+        "pip"
+      ],
+      "description": "Pip module operations in virtual environment"
+    },
+    {
+      "command": "pip",
+      "args": [
+        "install"
+      ],
+      "description": "Install Python packages"
+    },
+    {
+      "command": "pip",
+      "args": [
+        "uninstall"
+      ],
+      "description": "Uninstall Python packages"
+    },
+    {
+      "command": "pip",
+      "args": [
+        "list"
+      ],
+      "description": "List installed packages"
+    },
+    {
+      "command": "pip",
+      "args": [
+        "show"
+      ],
+      "description": "Show package information"
+    },
+    {
+      "command": "pip",
+      "args": [
+        "freeze"
+      ],
+      "description": "Output installed packages in requirements format"
+    },
+    {
+      "command": "pip3",
+      "args": [
+        "*"
+      ],
+      "description": "Pip3 operations"
+    },
+    {
+      "command": "mkdir",
+      "args": [
+        "*"
+      ],
+      "description": "Create directories"
+    },
+    {
+      "command": "touch",
+      "args": [
+        "*"
+      ],
+      "description": "Create empty files or update timestamps"
+    },
+    {
+      "command": "rm",
+      "args": [
+        "*"
+      ],
+      "description": "Remove files and directories"
+    },
+    {
+      "command": "mv",
+      "args": [
+        "*"
+      ],
+      "description": "Move or rename files"
+    },
+    {
+      "command": "cp",
+      "args": [
+        "*"
+      ],
+      "description": "Copy files and directories"
+    },
+    {
+      "command": "chmod",
+      "args": [
+        "*"
+      ],
+      "description": "Change file permissions"
+    },
+    {
+      "command": "chown",
+      "args": [
+        "*"
+      ],
+      "description": "Change file ownership"
+    },
+    {
+      "command": "ls",
+      "args": [
+        "*"
+      ],
+      "description": "List directory contents"
+    },
+    {
+      "command": "cat",
+      "args": [
+        "*"
+      ],
+      "description": "Concatenate and display files"
+    },
+    {
+      "command": "head",
+      "args": [
+        "*"
+      ],
+      "description": "Output the first part of files"
+    },
+    {
+      "command": "tail",
+      "args": [
+        "*"
+      ],
+      "description": "Output the last part of files"
+    },
+    {
+      "command": "less",
+      "args": [
+        "*"
+      ],
+      "description": "View file contents with pagination"
+    },
+    {
+      "command": "more",
+      "args": [
+        "*"
+      ],
+      "description": "View file contents with pagination"
+    },
+    {
+      "command": "echo",
+      "args": [
+        "*"
+      ],
+      "description": "Display text or write to files"
+    },
+    {
+      "command": "cd",
+      "args": [
+        "*"
+      ],
+      "description": "Change directory"
+    },
+    {
+      "command": "pwd",
+      "args": [
+        "*"
+      ],
+      "description": "Print working directory"
+    },
+    {
+      "command": "wc",
+      "args": [
+        "*"
+      ],
+      "description": "Word, line, character count"
+    },
+    {
+      "command": "sort",
+      "args": [
+        "*"
+      ],
+      "description": "Sort lines of text"
+    },
+    {
+      "command": "uniq",
+      "args": [
+        "*"
+      ],
+      "description": "Filter duplicate lines"
+    },
+    {
+      "command": "diff",
+      "args": [
+        "*"
+      ],
+      "description": "Compare files line by line"
+    },
+    {
+      "command": "file",
+      "args": [
+        "*"
+      ],
+      "description": "Determine file type"
+    },
+    {
+      "command": "du",
+      "args": [
+        "*"
+      ],
+      "description": "Estimate file space usage"
+    },
+    {
+      "command": "df",
+      "args": [
+        "*"
+      ],
+      "description": "Report file system disk space usage"
+    },
+    {
+      "command": "ps",
+      "args": [
+        "*"
+      ],
+      "description": "Report process status"
+    },
+    {
+      "command": "top",
+      "args": [
+        "*"
+      ],
+      "description": "Display system tasks and resource usage"
+    },
+    {
+      "command": "kill",
+      "args": [
+        "*"
+      ],
+      "description": "Send signal to processes"
+    },
+    {
+      "command": "killall",
+      "args": [
+        "*"
+      ],
+      "description": "Kill processes by name"
+    },
+    {
+      "command": "which",
+      "args": [
+        "*"
+      ],
+      "description": "Locate a command"
+    },
+    {
+      "command": "whereis",
+      "args": [
+        "*"
+      ],
+      "description": "Locate binary, source, and manual page files"
+    },
+    {
+      "command": "whoami",
+      "args": [
+        "*"
+      ],
+      "description": "Print current user name"
+    },
+    {
+      "command": "date",
+      "args": [
+        "*"
+      ],
+      "description": "Display or set date and time"
+    },
+    {
+      "command": "uname",
+      "args": [
+        "*"
+      ],
+      "description": "Print system information"
+    },
+    {
+      "command": "hostname",
+      "args": [
+        "*"
+      ],
+      "description": "Show or set system hostname"
+    },
+    {
+      "command": "tar",
+      "args": [
+        "*"
+      ],
+      "description": "Archive files"
+    },
+    {
+      "command": "gzip",
+      "args": [
+        "*"
+      ],
+      "description": "Compress files"
+    },
+    {
+      "command": "gunzip",
+      "args": [
+        "*"
+      ],
+      "description": "Decompress files"
+    },
+    {
+      "command": "zip",
+      "args": [
+        "*"
+      ],
+      "description": "Package and compress files"
+    },
+    {
+      "command": "unzip",
+      "args": [
+        "*"
+      ],
+      "description": "Extract compressed files"
+    },
+    {
+      "command": "find",
+      "args": [
+        "*"
+      ],
+      "description": "Search for files"
+    },
+    {
+      "command": "grep",
+      "args": [
+        "*"
+      ],
+      "description": "Search text patterns"
+    },
+    {
+      "command": "sed",
+      "args": [
+        "*"
+      ],
+      "description": "Stream editor (use with caution - prefer Edit tool)"
+    },
+    {
+      "command": "awk",
+      "args": [
+        "*"
+      ],
+      "description": "Text processing tool"
+    },
+    {
+      "command": "curl",
+      "args": [
+        "*"
+      ],
+      "description": "Transfer data with URLs"
+    },
+    {
+      "command": "wget",
+      "args": [
+        "*"
+      ],
+      "description": "Download files from the web"
+    },
+    {
+      "command": "jq",
+      "args": [
+        "*"
+      ],
+      "description": "Process JSON data"
+    },
+    {
+      "command": "docker",
+      "args": [
+        "*"
+      ],
+      "description": "Docker operations"
+    },
+    {
+      "command": "docker-compose",
+      "args": [
+        "*"
+      ],
+      "description": "Docker Compose operations"
+    },
+    {
+      "command": "docker compose",
+      "args": [
+        "*"
+      ],
+      "description": "Docker Compose v2 operations"
+    },
+    {
+      "command": "make",
+      "args": [
+        "*"
+      ],
+      "description": "Run Makefile targets"
+    },
+    {
+      "command": "pytest",
+      "args": [
+        "*"
+      ],
+      "description": "Run Python tests"
+    },
+    {
+      "command": ".venv/bin/pytest",
+      "args": [
+        "*"
+      ],
+      "description": "Run pytest from virtual environment"
+    },
+    {
+      "command": "source",
+      "args": [
+        "*"
+      ],
+      "description": "Execute commands from a file in current shell"
+    },
+    {
+      "command": "export",
+      "args": [
+        "*"
+      ],
+      "description": "Set environment variables"
+    },
+    {
+      "command": "tee",
+      "args": [
+        "*"
+      ],
+      "description": "Read from stdin and write to stdout and files"
+    },
+    {
+      "command": "openssl",
+      "args": [
+        "*"
+      ],
+      "description": "OpenSSL cryptographic operations"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "*"
+      ],
+      "description": "AWS CLI operations"
+    }
+  ],
+  "blockedCommands": [
+    {
+      "command": "terraform",
+      "args": [
+        "destroy"
+      ],
+      "reason": "Terraform destroy must be run manually by user"
+    },
+    {
+      "command": "git",
+      "args": [
+        "push"
+      ],
+      "reason": "Git push must be run manually by user"
+    },
+    {
+      "command": "git",
+      "args": [
+        "push",
+        "--force"
+      ],
+      "reason": "Force push requires manual approval"
+    },
+    {
+      "command": "git",
+      "args": [
+        "push",
+        "-f"
+      ],
+      "reason": "Force push requires manual approval"
+    },
+    {
+      "command": "rm",
+      "args": [
+        "-rf",
+        "/"
+      ],
+      "reason": "Destructive system-wide operation"
+    },
+    {
+      "command": "rm",
+      "args": [
+        "-rf",
+        "~"
+      ],
+      "reason": "Destructive home directory operation"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "ec2",
+        "terminate-instances"
+      ],
+      "reason": "EC2 instance termination must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "ec2",
+        "delete-*"
+      ],
+      "reason": "EC2 resource deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "ecs",
+        "delete-*"
+      ],
+      "reason": "ECS resource deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "ecs",
+        "deregister-task-definition"
+      ],
+      "reason": "ECS task definition deregistration must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "efs",
+        "delete-*"
+      ],
+      "reason": "EFS resource deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "iam",
+        "delete-*"
+      ],
+      "reason": "IAM resource deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "iam",
+        "detach-*"
+      ],
+      "reason": "IAM policy detachment must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "iam",
+        "remove-*"
+      ],
+      "reason": "IAM resource removal must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "logs",
+        "delete-*"
+      ],
+      "reason": "CloudWatch Logs deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "cloudwatch",
+        "delete-*"
+      ],
+      "reason": "CloudWatch resource deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "elbv2",
+        "delete-*"
+      ],
+      "reason": "Load balancer deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "servicediscovery",
+        "delete-*"
+      ],
+      "reason": "Service discovery resource deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "s3",
+        "rb"
+      ],
+      "reason": "S3 bucket deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "s3",
+        "rm"
+      ],
+      "reason": "S3 object deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "s3api",
+        "delete-*"
+      ],
+      "reason": "S3 API deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "ecr",
+        "delete-*"
+      ],
+      "reason": "ECR resource deletion must be done manually"
+    },
+    {
+      "command": "aws",
+      "args": [
+        "vpc",
+        "delete-*"
+      ],
+      "reason": "VPC resource deletion must be done manually"
+    }
+  ],
+  "notes": [
+    "Terraform destroy is blocked - must be run manually",
+    "Git push is blocked - must be run manually by user",
+    "Force push to remote is blocked unless explicitly approved by user",
+    "Git operations follow safety protocol from CLAUDE.md",
+    "All shell commands (cd, tail, head, cat, etc.) are allowed",
+    "Python/pip operations use virtual environment when available",
+    "Terraform plans are saved to terraform_plans/ directory (gitignored)",
+    "All terraform state files are protected from deletion",
+    "AWS CLI: All read operations (describe, list, get) are allowed without prompts",
+    "AWS CLI: All write operations (create, update, put, modify, start, stop) are allowed without prompts",
+    "AWS CLI: All delete operations are BLOCKED and must be done manually",
+    "AWS CLI: EC2 terminate-instances is BLOCKED",
+    "AWS CLI: IAM detach/remove operations are BLOCKED for safety",
+    "AWS CLI: S3 rm/rb operations are BLOCKED",
+    "WebSearch and WebFetch are auto-approved via permissions.allow (no prompts)",
+    "AWS CLI: All read/write operations (logs, dynamodb, s3, ecs, ec2, etc) allowed without prompts",
+    "AWS CLI: All delete operations (s3 rm/rb, delete-*, terminate-*) are BLOCKED",
+    "Deny rules have precedence over allow rules for additional safety",
+    "See settings.local.json for additional local permission overrides"
+  ]
+}

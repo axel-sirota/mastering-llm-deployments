@@ -14,13 +14,11 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 
 def quantize_model(model, mode):
     if mode == "bfloat16":
-        model = model.to(torch.bfloat16)
-        print("Model converted to bfloat16.")
+        pass  # YOUR CODE: cast the model to bfloat16 precision and print a confirmation
     elif mode == "int8":
-        model = torch.quantization.quantize_dynamic(model, {torch.nn.Linear}, dtype=torch.qint8)
-        print("Model dynamically quantized to int8.")
+        pass  # YOUR CODE: apply dynamic quantization to Linear layers using int8 dtype (use torch.ao.quantization) and print a confirmation
     elif mode == "taq":
-        print("Training-Aware Quantization selected (simulation).")
+        pass  # YOUR CODE: print a message indicating TAQ simulation was selected
     else:
         print("Invalid mode; returning original model.")
     return model
@@ -30,9 +28,9 @@ def main():
         print("Usage: python starter_code.py [taq|bfloat16|int8]")
         sys.exit(1)
     mode = sys.argv[1]
-    model_name = "t5-small"
-    tokenizer = AutoTokenizer.from_pretrained(model_name)
-    model = AutoModelForSeq2SeqLM.from_pretrained(model_name)
+    model_name = "local_models/t5-small"
+    tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
+    model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     print(f"Applying quantization mode: {mode}")
     quantized_model = quantize_model(model, mode)
     output_dir = f"./quantized_model_{mode}"

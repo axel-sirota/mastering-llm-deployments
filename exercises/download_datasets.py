@@ -30,7 +30,7 @@ if __name__ == "__main__":
     token = os.getenv("HF_TOKEN", None)
     datasets_to_download = {
         "imdb": "local_datasets/imdb",
-        "dialogsum": "local_datasets/dialogsum"
+        "knkarthick/dialogsum": "local_datasets/dialogsum"
     }
     for repo_id, target_dir in datasets_to_download.items():
         print(f"Downloading dataset: {repo_id}")

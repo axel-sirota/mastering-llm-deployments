@@ -1,15 +1,15 @@
 """
 Lab 5: Model Pruning
 
-This script demonstrates how to prune a pre-trained model to remove less important weights.
-We use PyTorch's pruning utilities.
+This script demonstrates how to prune a model (t5-small) to reduce its effective complexity.
+We use PyTorch's pruning utilities to remove 20% of weights in Linear layers.
 """
 import torch
 from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch.nn.utils.prune as prune
 
 def main():
-    model_name = "t5-small"
+    model_name = "local_models/t5-small"
     tokenizer = AutoTokenizer.from_pretrained(model_name, local_files_only=True)
     model = AutoModelForSeq2SeqLM.from_pretrained(model_name, local_files_only=True)
     print("Before pruning:")

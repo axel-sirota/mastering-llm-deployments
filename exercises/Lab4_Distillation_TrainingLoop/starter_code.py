@@ -15,8 +15,7 @@ import torch.nn.functional as F
 
 def tokenize_function(example, tokenizer, max_input_length=256, max_target_length=128):
     model_inputs = tokenizer(example["dialogue"], truncation=True, padding="max_length", max_length=max_input_length)
-    with tokenizer.as_target_tokenizer():
-        labels = tokenizer(example["summary"], truncation=True, padding="max_length", max_length=max_target_length)
+    labels = tokenizer(text_target=example["summary"], truncation=True, padding="max_length", max_length=max_target_length)
     model_inputs["labels"] = torch.tensor(labels["input_ids"])
     model_inputs["decoder_input_ids"] = torch.tensor(labels["input_ids"])
     return model_inputs
@@ -24,7 +23,15 @@ def tokenize_function(example, tokenizer, max_input_length=256, max_target_lengt
 def main():
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     
-    # [EXERCISE] Add any parameters you think are necessary. for student and teacher models
+    teacher_model_name = "local_models/flan-t5-xl"
+    teacher_tokenizer = AutoTokenizer.from_pretrained(teacher_model_name, local_files_only=True)
+    teacher_model = AutoModelForSeq2SeqLM.from_pretrained(teacher_model_name, local_files_only=True).to(device)
+    teacher_model.eval()
+
+    student_model_name = "local_models/t5-small"
+    student_tokenizer = AutoTokenizer.from_pretrained(student_model_name, local_files_only=True)
+    student_model = AutoModelForSeq2SeqLM.from_pretrained(student_model_name, local_files_only=True).to(device)
+    student_model.train()
     
     try:
         dataset = load_from_disk("local_datasets/dialogsum")
@@ -48,8 +55,12 @@ def main():
     
     optimizer = AdamW(student_model.parameters(), lr=3e-5)
     
-    # [EXERCISE] Implement the training loop here:
-    None  # please fill here with code to update the student model using KL divergence loss
+    num_epochs = 1
+    batch_size = 4
+    print("Starting distillation training loop...")
+    for epoch in range(num_epochs):
+        for i in range(0, len(tokenized_dataset), batch_size):
+            pass  # YOUR CODE: slice the batch, stack tensors and move to device, get teacher logits (no_grad), get student logits, compute KL divergence loss, zero_grad + backward + step
     
     print("Distillation training complete!")
     

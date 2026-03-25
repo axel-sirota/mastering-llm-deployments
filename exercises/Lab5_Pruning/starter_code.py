@@ -9,16 +9,15 @@ from transformers import AutoTokenizer, AutoModelForSeq2SeqLM
 import torch.nn.utils.prune as prune
 
 def main():
-    model_name = "t5-small"
-    tokenizer = # [EXERCISE] Add any parameters you think are necessary.
-    model = # [EXERCISE] Add any parameters you think are necessary.
+    model_name = "local_models/t5-small"
+    tokenizer = None  # YOUR CODE: load the tokenizer from model_name with local_files_only=True
+    model = None  # YOUR CODE: load the seq2seq model from model_name with local_files_only=True
     print("Before pruning:")
     total_params = sum(p.numel() for p in model.parameters())
     print(f"Total parameters: {total_params}")
     for name, module in model.named_modules():
         if isinstance(module, torch.nn.Linear):
-            # [EXERCISE] Add any parameters you think are necessary.
-            # [EXERCISE] Add any parameters you think are necessary.
+            pass  # YOUR CODE: apply l1_unstructured pruning on the module weight (amount=0.2), then remove the reparameterization
     print("After pruning:")
     total_params_pruned = sum(p.numel() for p in model.parameters())
     print(f"Total parameters (count remains the same, but many weights are zeroed): {total_params_pruned}")
