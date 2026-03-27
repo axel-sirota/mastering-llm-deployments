@@ -23,4 +23,4 @@ iface = gr.Interface(fn=summarize_text, inputs="text", outputs="text", title="HF
                      description="Enter text and get a summarised version.")
 
 if __name__ == "__main__":
-    iface.launch()
+    iface.launch(server_name="0.0.0.0")

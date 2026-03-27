@@ -20,3 +20,7 @@ variable "security_groups" {
   description = "List of security group IDs"
   type        = list(string)
 }
+variable "vpc_id" {
+  description = "VPC ID for the load balancer"
+  type        = string
+}

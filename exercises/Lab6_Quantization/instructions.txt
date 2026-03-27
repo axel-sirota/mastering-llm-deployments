@@ -1,7 +1,16 @@
-# Instructions for Lab 6: Model Quantization
+# Instructions for Lab 6: Post-Training Quantization + Benchmarking
 
-This lab applies one of three quantization techniques to t5-small.
+This lab unifies quantization (Lab 6) and benchmarking (Lab 7) into one script.
+It applies three PTQ techniques to t5-small and measures the latency and
+summarisation quality (BLEU + ROUGE-L) of each variant side-by-side.
+
+There are three exercises inside starter_code.py:
+  Exercise 1 — quantize_model(): implement bfloat16 cast and int8 dynamic quantization
+  Exercise 2 — generate_summary(): call model.generate() and decode the output
+  Exercise 3 — compute_metrics(): load and compute BLEU and ROUGE-L with the evaluate library
+
 Usage:
-1. Install dependencies: `pip install -r requirements.txt`
-2. Run with: `python starter_code.py int8` (or "taq" or "bfloat16")
-3. The quantized model is saved in a folder named by the mode.
+1. Install dependencies: pip install -r requirements.txt
+2. Run with: python starter_code.py
+3. All three modes (fp32, bfloat16, int8) run automatically.
+4. A comparison table is printed at the end showing latency and accuracy per mode.

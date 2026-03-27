@@ -180,3 +180,11 @@ create_struture.py
 .DS_Store
 exercises.py
 researches/
+
+# Terraform
+*.tfstate
+*.tfstate.*
+.terraform/
+terraform_plans/
+*.tfvars
+*.tfplan
